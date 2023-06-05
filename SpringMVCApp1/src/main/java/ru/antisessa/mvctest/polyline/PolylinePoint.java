@@ -26,7 +26,7 @@ public class PolylinePoint implements Serializable {
         this.lng = lng;
     }
 
-        public double getLat() {
+    public double getLat() {
         return lat;
     }
 

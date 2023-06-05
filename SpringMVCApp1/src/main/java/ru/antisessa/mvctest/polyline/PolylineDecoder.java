@@ -48,10 +48,7 @@ public class PolylineDecoder {
             int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
             lng += dlng;
 
-            //Switch param lat to lng and lng to lat
-            // @before Point p = new Point((double) lat / precision, (double) lng / precision);
-            //            track.add(p);
-            PolylinePoint p = new PolylinePoint((double) lng / precision, (double) lat / precision);
+            PolylinePoint p = new PolylinePoint((double) lat / precision, (double) lng / precision);
             track.add(p);
         }
         return track;

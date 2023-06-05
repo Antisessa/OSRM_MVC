@@ -1,0 +1,7 @@
+url=https://router.project-osrm.org/route/v1/driving/
+alternatives= true / false (default)
+steps= true / false (default)
+annotations= true / false (default)
+overview= simplified (default) / full / false
+continue_straight= default (default) / true / false
+geometries= polyline (default) / polyline6 / geojson
