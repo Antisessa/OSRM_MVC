@@ -14,18 +14,15 @@ public class PolylineUtils {
 
 	public static String toStringForGeoJSON(List<PolylinePoint> polyline) {
 		StringBuilder sb = new StringBuilder();
-		String part1 =  """
-				{
-				"type": "FeatureCollection",
-				  "features": [
-				{
-				"type": "Feature",
-				      "id": 0,
-				      "geometry": {
-				        "type": "LineString",
-				        "coordinates":
-				""";
-		sb.append(part1).append("[\n");
+		sb.append("{\n");
+		sb.append("\"type\": \"FeatureCollection\",\n");
+		sb.append("\"features\": [ \n");
+		sb.append("{\n");
+		sb.append("\"type\": \"Feature\", \n");
+		sb.append("\"id\": 0, \n");
+		sb.append("\"geometry\": { \n");
+		sb.append("\"type\": \"LineString\", \n");
+		sb.append("\"coordinates\":[\n");
 
 		for (int i = 0; i < polyline.size(); i++) {
 			sb.append("[");
@@ -37,19 +34,16 @@ public class PolylineUtils {
 		sb.deleteCharAt(sb.lastIndexOf(","));
 		sb.append("]\n");
 
-		String part3 = """
-				},
-				"properties": {
-				"description": "«Метрополитен рейлуэй»",
-				"stroke": "#b51eff",
-				"stroke-width": "8",
-				"stroke-opacity": 0.4
-								}
-						}
-					]
-				}
-				""";
-		sb.append(part3);
+		sb.append("},\n");
+		sb.append("\"properties\": {\n");
+		sb.append("\"description\": \"«Метрополитен рейлуэй»\",\n");
+		sb.append("\"stroke\": \"#b51eff\",\n");
+		sb.append("\"stroke-width\": \"8\",\n");
+		sb.append("\"stroke-opacity\": 0.4\n");
+		sb.append("}\n");
+		sb.append("}\n");
+		sb.append("]\n");
+		sb.append("}\n");
 		return sb.toString();
 	}
 
